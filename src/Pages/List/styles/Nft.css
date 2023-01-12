@@ -1,0 +1,14 @@
+.nft-div {
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.nft-div > button {
+  background-color: transparent;
+  color: #858483;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: 500;
+}

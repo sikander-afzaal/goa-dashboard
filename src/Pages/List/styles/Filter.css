@@ -1,0 +1,34 @@
+.filter-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+.filter-div button {
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  border-radius: 100vh;
+  width: 100%;
+  max-width: 182px;
+  height: 40px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  background-color: transparent;
+}
+.filter-div .active-filter {
+  background-color: var(--orange);
+  color: #110f06;
+}
+@media screen and (max-width: 615px) {
+  .filter-div {
+    flex-direction: column;
+  }
+  .filter-div button {
+    max-width: 100%;
+  }
+}
