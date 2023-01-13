@@ -72,7 +72,7 @@ const NftCard = ({
         )}
         {listed && (
           <button onClick={() => dispatch(unListNft({ id, name, img }))}>
-            Listed
+            Unlist
           </button>
         )}
         {ongoing && <button>Ongoing</button>}
