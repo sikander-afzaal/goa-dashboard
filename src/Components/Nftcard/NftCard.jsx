@@ -66,10 +66,10 @@ const NftCard = ({
           <button
             onClick={() => {
               setRent((prev) => !prev);
+              dispatch(changeImg(img));
             }}
-            className={`${rent ? "rented-btn" : ""}`}
           >
-            {rent ? "Rented" : "Rent"}
+            Rent
           </button>
         )}
         {select && (

@@ -43,7 +43,9 @@ const CounterOfferModal = ({ setModal }) => {
           </div>
           <h5>Total % must equal 100%</h5>
         </div>
-        <button className="outline-btn">SEND</button>
+        <button onClick={() => setModal(false)} className="outline-btn">
+          SEND
+        </button>
       </div>
     </>
   );
