@@ -1,0 +1,64 @@
+.guild-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+  padding: 30px;
+  border: 1px solid var(--orange);
+  /* background-color: #1e1e1e; */
+}
+.left-guild {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.left-guild p,
+.left-guild h3 {
+  font-weight: 500;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #858483;
+  text-align: center;
+}
+.left-guild img {
+  max-width: 20px;
+  width: 100%;
+  object-fit: contain;
+}
+.guild-row > button {
+  border-radius: 100vh;
+  border: 1px solid var(--orange);
+  background-color: var(--orange);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  width: 182px;
+  height: 40px;
+  color: #110f06;
+  font-weight: 500;
+  font-size: 16.2px;
+  text-transform: uppercase;
+}
+.guild-row > button:hover {
+  background-color: transparent;
+  color: white;
+}
+@media screen and (max-width: 750px) {
+  .guild-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .left-guild p,
+  .left-guild h3 {
+    font-size: 18px;
+  }
+  .guild-row {
+    padding-inline: 10px;
+  }
+  .left-guild img {
+    max-width: 16px;
+  }
+}

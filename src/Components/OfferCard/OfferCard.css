@@ -1,0 +1,131 @@
+.offer-card-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+.bottom-card2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.bottom-card2 .nft-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.bottom-card2 > p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 14px;
+}
+.bottom-card2 > p span {
+  color: var(--orange);
+}
+.offer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--orange);
+  padding: 20px;
+}
+.left-offer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.left-offer h3 {
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  color: var(--orange);
+}
+.left-offer h3 img {
+  width: 24px;
+  object-fit: contain;
+}
+.left-offer p {
+  font-weight: 300;
+  font-size: 24px;
+  color: #524fff;
+}
+.right-offer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.right-offer p {
+  font-weight: 300;
+  font-size: 20px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.right-offer > button {
+  border-radius: 100vh;
+  border: 1px solid var(--orange);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  width: 108px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 16.2px;
+  text-transform: uppercase;
+}
+.right-offer .accept {
+  color: #110f06;
+  background-color: var(--orange);
+}
+.right-offer .deny {
+  color: var(--orange);
+  background-color: transparent;
+}
+.right-offer > .accept:hover {
+  background-color: transparent;
+  color: white;
+}
+.right-offer > .deny:hover {
+  background-color: var(--orange);
+  color: #110f06;
+}
+@media screen and (max-width: 1000px) {
+  .offer-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .offer-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .left-offer {
+    gap: 10px;
+    flex-direction: column;
+  }
+  .left-offer p {
+    font-size: 20px;
+  }
+  .right-offer {
+    flex-direction: column;
+    width: 100%;
+  }
+  .right-offer button {
+    width: 100%;
+  }
+}

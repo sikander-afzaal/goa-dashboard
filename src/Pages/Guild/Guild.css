@@ -1,0 +1,43 @@
+.guild-div {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.guild-div > h2 {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32px;
+  text-transform: uppercase;
+  gap: 20px;
+  cursor: pointer;
+}
+.guild-div > h2 img {
+  object-fit: contain;
+  width: 100%;
+  max-width: 45px;
+}
+.guild-col {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  gap: 30px;
+}
+@media screen and (max-width: 750px) {
+  .guild-div {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .guild-div > h2 {
+    font-size: 26px;
+  }
+  .guild-div > h2 img {
+    max-width: 35px;
+  }
+}
