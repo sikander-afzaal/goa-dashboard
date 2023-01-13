@@ -2,15 +2,19 @@ import "./ListModal.css";
 import NftCard from "../Nftcard/NftCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { listNfts } from "../../redux/listSlice";
+import { listNfts, changePercentage } from "../../redux/listSlice";
 
 const ListModal = ({ setModal }) => {
   const dispatch = useDispatch();
   const [inputYou, setInputYou] = useState();
   const [inputRenter, setInputRenter] = useState();
   const { selectedNfts } = useSelector((state) => state.listed);
+  useEffect(() => {
+    dispatch(changePercentage({ you: inputYou, renter: inputRenter }));
+  }, [inputYou]);
+
   return (
     <>
       <div onClick={() => setModal(false)} className="overlay"></div>

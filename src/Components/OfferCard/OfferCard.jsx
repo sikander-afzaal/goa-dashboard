@@ -1,16 +1,32 @@
+import { useState } from "react";
+import CounterOfferModal from "../CounterOfferModal/CounterOfferModal";
 import "./OfferCard.css";
 
 const OfferCard = () => {
+  const [modal, setModal] = useState(false);
   return (
     <div className="offer-card-div">
+      {modal && <CounterOfferModal setModal={setModal} />}
       <OfferNft
         img="/assets/nft-imgs/heimdall.png"
         name="Heimdall"
         type="Legenday"
       />
-      <OfferRow offer={"60/40"} address="0ax4gfrt5gkkl65ggjkl9......ss45g" />
-      <OfferRow offer={"60/40"} address="0ax4gfrt5gkkl65ggjkl9......ss45g" />
-      <OfferRow offer={"60/40"} address="0ax4gfrt5gkkl65ggjkl9......ss45g" />
+      <OfferRow
+        setModal={setModal}
+        offer={"60/40"}
+        address="0ax4gfrt5gkkl65ggjkl9......ss45g"
+      />
+      <OfferRow
+        setModal={setModal}
+        offer={"60/40"}
+        address="0ax4gfrt5gkkl65ggjkl9......ss45g"
+      />
+      <OfferRow
+        setModal={setModal}
+        offer={"60/40"}
+        address="0ax4gfrt5gkkl65ggjkl9......ss45g"
+      />
     </div>
   );
 };
@@ -43,7 +59,7 @@ const OfferNft = ({ img, name, type }) => {
   );
 };
 
-const OfferRow = ({ offer, address }) => {
+const OfferRow = ({ offer, address, setModal }) => {
   return (
     <div className="offer-row">
       <div className="left-offer">
@@ -56,7 +72,7 @@ const OfferRow = ({ offer, address }) => {
       <div className="right-offer">
         <button className="accept">Accept</button>
         <button className="deny">Deny</button>
-        <p>Make Counter offer</p>
+        <p onClick={() => setModal(true)}>Make Counter offer</p>
       </div>
     </div>
   );

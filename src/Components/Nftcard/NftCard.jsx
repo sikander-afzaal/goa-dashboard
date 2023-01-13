@@ -3,7 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectNft, unListNft } from "../../redux/listSlice";
 import "./NftCard.css";
 
-const NftCard = ({ img, name, rented, select, id, listed, ongoing }) => {
+const NftCard = ({
+  img,
+  name,
+  rented,
+  select,
+  id,
+  listed,
+  ongoing,
+  you,
+  renter,
+}) => {
   const [rent, setRent] = useState(false);
 
   const [selected, setSelected] = useState(false);
@@ -39,7 +49,9 @@ const NftCard = ({ img, name, rented, select, id, listed, ongoing }) => {
           </div>
           <div className="card-row">
             <img src="/assets/card-ico.png" alt="" />
-            <p>70/30</p>
+            <p>
+              {you}/{renter}
+            </p>
           </div>
         </div>
         {rented && (

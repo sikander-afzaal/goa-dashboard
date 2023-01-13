@@ -2,28 +2,136 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   allNfts: [
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 1 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 2 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 3 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 4 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 5 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 6 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 7 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 8 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 9 },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 1,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 2,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 3,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 4,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 5,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 6,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 7,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 8,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 9,
+      you: 70,
+      renter: 30,
+    },
   ],
   selectedNfts: [],
   listedNfts: [],
   unlistedNfts: [
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 1 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 2 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 3 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 4 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 5 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 6 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 7 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 8 },
-    { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 9 },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 1,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 2,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 3,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 4,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 5,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 6,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 7,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 8,
+      you: 70,
+      renter: 30,
+    },
+    {
+      img: "/assets/nft-imgs/heimdall.png",
+      name: "Heimdall",
+      id: 9,
+      you: 70,
+      renter: 30,
+    },
   ],
 };
 
@@ -77,10 +185,17 @@ export const nftSlice = createSlice({
       //then add the removed nft to the unlisted array
       state.unlistedNfts.push({ ...action.payload });
     },
+    changePercentage: (state, action) => {
+      state.selectedNfts.map((elem) => {
+        elem.you = action.payload.you;
+        elem.renter = action.payload.renter;
+      });
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { selectNft, listNfts, selectAll, unListNft } = nftSlice.actions;
+export const { selectNft, listNfts, selectAll, unListNft, changePercentage } =
+  nftSlice.actions;
 
 export default nftSlice.reducer;

@@ -75,6 +75,8 @@
   text-decoration: underline;
   text-transform: uppercase;
   color: var(--orange);
+  cursor: pointer;
+  user-select: none;
 }
 .right-offer > button {
   border-radius: 100vh;
