@@ -1,26 +1,29 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { changeFilter } from "../../redux/nftSlice";
 import "./styles/Filter.css";
 
 const Filter = () => {
-  const [filterTabSelected, setFilterTabSelected] = useState("unlisted");
+  const dispatch = useDispatch();
+  const { filterListed } = useSelector((state) => state.nfts);
   return (
     <div className="max">
       <div className="filter-div">
         <button
-          onClick={() => setFilterTabSelected("unlisted")}
-          className={filterTabSelected === "unlisted" ? "active-filter" : ""}
+          onClick={() => dispatch(changeFilter("unlisted"))}
+          className={filterListed === "unlisted" ? "active-filter" : ""}
         >
           Unlisted NFTS
         </button>
         <button
-          onClick={() => setFilterTabSelected("listed")}
-          className={filterTabSelected === "listed" ? "active-filter" : ""}
+          onClick={() => dispatch(changeFilter("listed"))}
+          className={filterListed === "listed" ? "active-filter" : ""}
         >
           Listed NFTS
         </button>
         <button
-          onClick={() => setFilterTabSelected("ongoing")}
-          className={filterTabSelected === "ongoing" ? "active-filter" : ""}
+          onClick={() => dispatch(changeFilter("ongoing"))}
+          className={filterListed === "ongoing" ? "active-filter" : ""}
         >
           Ongoing rentals
         </button>

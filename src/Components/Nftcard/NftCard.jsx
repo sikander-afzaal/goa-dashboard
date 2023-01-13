@@ -1,6 +1,30 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectNft, unListNft } from "../../redux/nftSlice";
 import "./NftCard.css";
 
-const NftCard = ({ img, name, rented, select }) => {
+const NftCard = ({ img, name, rented, select, id, listed, ongoing }) => {
+  const [rent, setRent] = useState(false);
+
+  const [selected, setSelected] = useState(false);
+
+  const { selectedNfts } = useSelector((state) => state.nfts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    let flag = false;
+    selectedNfts.forEach((elem) => {
+      if (elem.id === id) {
+        flag = true;
+      }
+    });
+    if (flag) {
+      setSelected(true);
+    } else {
+      setSelected(false);
+    }
+  }, [selectedNfts]);
+
   return (
     <div className="nft-card">
       <div className="nft-card-img">
@@ -18,9 +42,28 @@ const NftCard = ({ img, name, rented, select }) => {
             <p>70/30</p>
           </div>
         </div>
-        <button className={`${rented ? "rented-btn" : ""}`}>
-          {select ? "Select" : rented ? "Rented" : "Rent"}
-        </button>
+        {rented && (
+          <button
+            onClick={() => setRent((prev) => !prev)}
+            className={`${rent ? "rented-btn" : ""}`}
+          >
+            {rent ? "Rented" : "Rent"}
+          </button>
+        )}
+        {select && (
+          <button
+            onClick={() => dispatch(selectNft({ img, name, id }))}
+            className={`${selected ? "rented-btn" : ""}`}
+          >
+            {selected ? "Selected" : "Select"}
+          </button>
+        )}
+        {listed && (
+          <button onClick={() => dispatch(unListNft({ id, name, img }))}>
+            Listed
+          </button>
+        )}
+        {ongoing && <button>Ongoing</button>}
       </div>
     </div>
   );

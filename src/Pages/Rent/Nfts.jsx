@@ -5,18 +5,18 @@ const Nfts = () => {
   return (
     <div className="max ">
       <div className="nft-grid">
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
-        <NftCard img={"/assets/nft-imgs/heimdall.png"} name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
+        <NftCard img={"/assets/nft-imgs/heimdall.png"} rented name="Heimdall" />
       </div>
     </div>
   );

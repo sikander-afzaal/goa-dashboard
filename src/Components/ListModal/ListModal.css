@@ -1,0 +1,143 @@
+.list-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 85;
+  background: #1e1607;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.72);
+  border-radius: 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 90%;
+  max-width: 1312px;
+  height: 90%;
+  max-height: 672px;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}
+.list-modal > svg {
+  color: var(--orange);
+  font-size: 25px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.nft-row-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
+  gap: 20px;
+}
+.bottom-list-modal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.left-list-modal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.list-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+.orange-row {
+  color: var(--orange);
+}
+.left-list-modal p {
+  font-weight: 300;
+  font-size: 24px;
+  width: 71px;
+}
+.input-div-list {
+  background: #232631;
+  box-shadow: inset 0px 1px 4px 2px #11141d;
+  border-radius: 8px;
+  width: 108px;
+  height: 39px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  padding-inline: 10px;
+}
+.input-div-list input {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  border: none;
+  font-weight: 500;
+  font-size: 20px;
+  color: inherit;
+  outline: none;
+}
+.input-div-list input::-webkit-outer-spin-button,
+.input-div-list input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.input-div-list input[type="number"] {
+  -moz-appearance: textfield;
+}
+.input-div-list h6 {
+  font-weight: 500;
+  font-size: 24px;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.72);
+}
+.left-list-modal h5 {
+  color: #de3f44;
+  align-self: center;
+  font-weight: 300;
+  font-size: 16px;
+}
+.right-list-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.right-list-modal button {
+  width: 207.73px;
+  font-weight: 500;
+  font-size: 22px;
+  text-transform: capitalize;
+  color: #ffffff;
+  height: 57px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border: 1.07489px solid var(--orange);
+}
+.right-list-modal .inverse-orange-btn {
+  background-color: transparent;
+  height: 65px;
+}
+.right-list-modal .inverse-orange-btn:hover {
+  background-color: var(--orange);
+}
+.right-list-modal .orange-btn {
+  background-color: var(--orange);
+  outline: 1px solid var(--orange);
+  outline-offset: 3px;
+}
+.right-list-modal .orange-btn:hover {
+  outline-offset: 0px;
+  height: 65px;
+}
