@@ -12,3 +12,22 @@
   cursor: pointer;
   font-weight: 500;
 }
+.outline-btn {
+  background-color: var(--orange);
+  outline: 1px solid var(--orange);
+  outline-offset: 4px;
+  width: 116px;
+  height: 41px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin-top: 60px;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid transparent;
+}
+.outline-btn:hover {
+  background-color: transparent;
+  outline-offset: 0px;
+}

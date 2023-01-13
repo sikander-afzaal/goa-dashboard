@@ -6,6 +6,7 @@ const List = () => {
     <div className="page">
       <Filter />
       <Nfts />
+      <button className="outline-btn">Continue</button>
     </div>
   );
 };
