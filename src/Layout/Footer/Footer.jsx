@@ -7,7 +7,7 @@ const Footer = () => {
     <>
       <div className="container footer-wrap">
         <footer>
-          <img src="/hero-logo.png" alt="" />
+          <img src="/assets/hero-logo.png" alt="" />
           <div className="foot-links">
             <a href="/#hero">Home</a>
             <a href="/#about">About</a>

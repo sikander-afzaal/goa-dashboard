@@ -1,9 +1,10 @@
 .footer-wrap {
-  background-image: url("/bg1.png");
+  background-image: url("/public/assets/bg1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   padding: 30px 20px;
+  margin-top: 40px;
 }
 footer {
   display: flex;

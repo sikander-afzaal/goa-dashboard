@@ -136,7 +136,7 @@ const initialState = {
 };
 
 export const nftSlice = createSlice({
-  name: "counter",
+  name: "nft",
   initialState,
   reducers: {
     selectNft: (state, action) => {

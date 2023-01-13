@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectNft, unListNft } from "../../redux/listSlice";
+import { changeImg } from "../../redux/rentSlice";
 import "./NftCard.css";
 
 const NftCard = ({
@@ -37,7 +38,14 @@ const NftCard = ({
 
   return (
     <div className="nft-card">
-      <div className="nft-card-img">
+      <div
+        onClick={() => {
+          if (rented) {
+            dispatch(changeImg(img));
+          }
+        }}
+        className="nft-card-img"
+      >
         <img src={img} alt="" />
         <p>{name} #0001</p>
       </div>
@@ -56,7 +64,9 @@ const NftCard = ({
         </div>
         {rented && (
           <button
-            onClick={() => setRent((prev) => !prev)}
+            onClick={() => {
+              setRent((prev) => !prev);
+            }}
             className={`${rent ? "rented-btn" : ""}`}
           >
             {rent ? "Rented" : "Rent"}

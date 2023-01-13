@@ -1,11 +1,13 @@
+import { useSelector } from "react-redux";
 import "./styles/Details.css";
 
 const Details = () => {
+  const { heroImg } = useSelector((state) => state.rent);
   return (
     <div className="max details-div">
       <div className="details__img-div">
         <img src="/assets/frame.png" alt="" className="frame" />
-        <img src="/assets/nft-imgs/odin.png" alt="" className="detail-img" />
+        <img src={heroImg} alt="" className="detail-img" />
       </div>
       <div className="detail-grid">
         <div className="detail-row">
