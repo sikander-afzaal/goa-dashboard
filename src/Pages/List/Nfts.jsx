@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import NftCard from "../../Components/Nftcard/NftCard";
-import { selectAll } from "../../redux/nftSlice";
+import { selectAll } from "../../redux/listSlice";
 import "./styles/Nft.css";
 
 const Nfts = () => {
   const dispatch = useDispatch();
-  const { unlistedNfts, filterListed, listedNfts, allNfts } = useSelector(
-    (state) => state.nfts
+  const { unlistedNfts, listedNfts, allNfts } = useSelector(
+    (state) => state.listed
   );
+  const { filterListed } = useSelector((state) => state.filter);
   return (
     <>
       <div className="max nft-div">

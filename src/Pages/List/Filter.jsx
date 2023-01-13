@@ -1,11 +1,10 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeFilter } from "../../redux/nftSlice";
+import { changeFilter } from "../../redux/filterSlice";
 import "./styles/Filter.css";
 
 const Filter = () => {
   const dispatch = useDispatch();
-  const { filterListed } = useSelector((state) => state.nfts);
+  const { filterListed } = useSelector((state) => state.filter);
   return (
     <div className="max">
       <div className="filter-div">

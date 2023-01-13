@@ -12,7 +12,6 @@ const initialState = {
     { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 8 },
     { img: "/assets/nft-imgs/heimdall.png", name: "Heimdall", id: 9 },
   ],
-  filterListed: "unlisted",
   selectedNfts: [],
   listedNfts: [],
   unlistedNfts: [
@@ -34,6 +33,7 @@ export const nftSlice = createSlice({
   reducers: {
     selectNft: (state, action) => {
       let flag = false;
+      //i use a flag variable to check if the nft is already selected or not
       const newArr = state.selectedNfts.filter((elem) => {
         if (elem.id === action.payload.id) {
           flag = true;
@@ -42,7 +42,7 @@ export const nftSlice = createSlice({
           return elem;
         }
       });
-      console.log(newArr);
+      //if its selected, i remove the selection, else i select the nft
       if (!flag) {
         state.selectedNfts.push({ ...action.payload });
       } else {
@@ -53,8 +53,11 @@ export const nftSlice = createSlice({
       state.selectedNfts = state.unlistedNfts;
     },
     listNfts: (state, action) => {
+      //first i add the new nft to listed array
       state.listedNfts = [...state.listedNfts, ...action.payload];
+      //i empty/remove the selections
       state.selectedNfts = [];
+      //then i remove the listed nfts from unlisted nft array
       state.unlistedNfts = state.unlistedNfts.filter((elem) => {
         let flag = false;
         action.payload.forEach((elem2) => {
@@ -65,20 +68,19 @@ export const nftSlice = createSlice({
         return !flag && elem;
       });
     },
-    changeFilter: (state, action) => {
-      state.filterListed = action.payload;
-    },
+
     unListNft: (state, action) => {
+      //first i remove the listed nft from listed array
       state.listedNfts = state.listedNfts.filter(
         (elem) => elem.id !== action.payload.id
       );
+      //then add the removed nft to the unlisted array
       state.unlistedNfts.push({ ...action.payload });
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { selectNft, listNfts, changeFilter, selectAll, unListNft } =
-  nftSlice.actions;
+export const { selectNft, listNfts, selectAll, unListNft } = nftSlice.actions;
 
 export default nftSlice.reducer;

@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import nftReducer from "./nftSlice";
+import nftReducer from "./listSlice";
+import filterReducer from "./filterSlice";
 
 export const store = configureStore({
   reducer: {
-    nfts: nftReducer,
+    listed: nftReducer,
+    filter: filterReducer,
   },
 });

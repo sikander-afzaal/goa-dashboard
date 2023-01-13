@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectNft, unListNft } from "../../redux/nftSlice";
+import { selectNft, unListNft } from "../../redux/listSlice";
 import "./NftCard.css";
 
 const NftCard = ({ img, name, rented, select, id, listed, ongoing }) => {
@@ -8,7 +8,7 @@ const NftCard = ({ img, name, rented, select, id, listed, ongoing }) => {
 
   const [selected, setSelected] = useState(false);
 
-  const { selectedNfts } = useSelector((state) => state.nfts);
+  const { selectedNfts } = useSelector((state) => state.listed);
   const dispatch = useDispatch();
 
   useEffect(() => {

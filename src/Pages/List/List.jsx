@@ -6,9 +6,8 @@ import Nfts from "./Nfts";
 
 const List = () => {
   const [modal, setModal] = useState(false);
-  const { selectedNfts, filterListed, unlistedNfts } = useSelector(
-    (state) => state.nfts
-  );
+  const { selectedNfts, unlistedNfts } = useSelector((state) => state.listed);
+  const { filterListed } = useSelector((state) => state.filter);
   return (
     <div className="page">
       {modal && <ListModal setModal={setModal} />}
