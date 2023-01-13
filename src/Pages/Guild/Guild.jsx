@@ -32,7 +32,7 @@ const Guild = () => {
         </h2>
         <div className="guild-col">
           {DATA.map((elem, idx) => {
-            return <GuildRow {...elem} num={idx} key={idx + "row"} />;
+            return <GuildRow {...elem} num={idx + 1} key={idx + "row"} />;
           })}
         </div>
       </div>
