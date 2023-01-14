@@ -22,7 +22,14 @@ const ListModal = ({ setModal }) => {
         <FontAwesomeIcon onClick={() => setModal(false)} icon={faXmark} />
         <div className="nft-row-list custom-scroll">
           {selectedNfts.map((elem, idx) => {
-            return <NftCard {...elem} select key={idx + "nft-select-unlist"} />;
+            return (
+              <NftCard
+                {...elem}
+                eventsNone
+                select
+                key={idx + "nft-select-unlist"}
+              />
+            );
           })}
         </div>
         <div className="bottom-list-modal">

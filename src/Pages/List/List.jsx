@@ -12,7 +12,7 @@ const List = () => {
     <div className="page">
       {modal && <ListModal setModal={setModal} />}
       <Filter />
-      <Nfts />
+      <Nfts setModal={setModal} />
       {filterListed === "unlisted" && unlistedNfts.length > 0 && (
         <button
           onClick={() => {

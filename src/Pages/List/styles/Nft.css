@@ -4,13 +4,23 @@
   align-items: flex-start;
   gap: 20px;
 }
-.nft-div > button {
+.top-nft-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.top-nft-row > button:first-of-type {
   background-color: transparent;
   color: #858483;
   border: none;
   font-size: 22px;
   cursor: pointer;
   font-weight: 500;
+}
+.top-nft-row .outline-btn {
+  margin-top: 0px;
 }
 .outline-btn {
   background-color: var(--orange);

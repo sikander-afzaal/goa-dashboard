@@ -14,6 +14,7 @@ const NftCard = ({
   ongoing,
   you,
   renter,
+  eventsNone,
 }) => {
   const [rent, setRent] = useState(false);
 
@@ -74,7 +75,11 @@ const NftCard = ({
         )}
         {select && (
           <button
-            onClick={() => dispatch(selectNft({ img, name, id }))}
+            onClick={() => {
+              if (eventsNone) return;
+              dispatch(selectNft({ img, name, id }));
+            }}
+            style={{ cursor: eventsNone ? "not-allowed" : "pointer" }}
             className={`${selected ? "rented-btn" : ""}`}
           >
             {selected ? "Selected" : "Select"}
