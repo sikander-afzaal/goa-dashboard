@@ -27,6 +27,7 @@
   right: 20px;
   top: 20px;
   cursor: pointer;
+  z-index: 40;
 }
 .nft-row-list {
   display: flex;
@@ -34,6 +35,7 @@
   align-items: center;
   width: 100%;
   overflow-x: auto;
+  min-height: 369px;
   gap: 20px;
 }
 .bottom-list-modal {
@@ -151,13 +153,18 @@
   }
 }
 @media screen and (max-width: 550px) {
+  .list-modal {
+    gap: 20px;
+    overflow-y: auto;
+    padding: 20px;
+    justify-content: flex-start;
+    max-height: 95%;
+  }
   .right-list-modal {
     width: 100%;
     flex-direction: column;
   }
-  .list-modal {
-    padding: 20px;
-  }
+
   .right-list-modal button {
     width: 100%;
     height: 55px !important;
